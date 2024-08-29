@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div>
-      <Button>Hello from the fsdsusdasx</Button>
+      <Button>Hello from the ux</Button>
     </div>
   );
 }

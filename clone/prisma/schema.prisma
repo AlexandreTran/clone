@@ -24,15 +24,20 @@ model User {
 }
 
 model Home {
-  id          String  @id @default(uuid())
-  title       String?
-  description String?
-  guests      String?
-  bedrooms    String?
-  bathroooms  String?
-  country     String?
-  photo       String?
-  price       Int?
+  id           String  @id @default(uuid())
+  title        String?
+  description  String?
+  guests       String?
+  bedrooms     String?
+  bathroooms   String?
+  country      String?
+  photo        String?
+  price        Int?
+  categoryName String?
+
+  addedCategory    Boolean @default(false)
+  addedDescription Boolean @default(false)
+  addedLocation    Boolean @default(false)
 
   createdAT DateTime @default(now())
   User      User?    @relation(fields: [userId], references: [id])

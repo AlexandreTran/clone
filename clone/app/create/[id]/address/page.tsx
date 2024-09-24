@@ -9,6 +9,8 @@ import {
   SelectItem,
 } from "@/components/ui/select";
 
+import { Map } from "@/app/components/Map";
+
 export default function AddressRoute() {
   const { getAllCountries } = useCountries();
   return (
@@ -37,6 +39,7 @@ export default function AddressRoute() {
                 </SelectContent>
               </Select>
             </div>
+            <Map />
           </div>
         </form>
       </div>

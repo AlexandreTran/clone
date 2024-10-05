@@ -51,7 +51,7 @@ export async function UserNav() {
             </DropdownMenuItem>
             <DropdownMenuItem>
               <Link href="/my-homes" className="w-full">
-                My listings
+                My Listings
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem>

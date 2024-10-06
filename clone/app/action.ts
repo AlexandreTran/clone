@@ -4,6 +4,7 @@ import prisma from "@/lib/db";
 import { redirect } from "next/navigation";
 import { supabase } from "./lib/supabase";
 import { revalidatePath } from "next/cache";
+import { start } from "repl";
 
 export async function createAirBnbHome({ userId }: { userId: string }) {
   const data = await prisma.home.findFirst({
@@ -159,4 +160,22 @@ export async function deleteFromFavorite(formData: FormData) {
   });
 
   revalidatePath(pathName);
+}
+
+export async function createReservation(formData: FormData) {
+  const userId = formData.get("userId") as string;
+  const homeId = formData.get("homeId") as string;
+  const startData = formData.get("startDate") as string;
+  const endDate = formData.get("endDate") as string;
+
+  const date = await prisma.reservation.create({
+    data: {
+      userId: userId,
+      homeId: homeId,
+      startDate: startData,
+      endDate: endDate,
+    },
+  });
+
+  return redirect("/");
 }

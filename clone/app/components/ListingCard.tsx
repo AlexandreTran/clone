@@ -2,11 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCountries } from "../lib/getCountries";
 import { AddToFavoriteButton, DeleteFromFavoriteButton } from "./SubmitButtons";
-import {
-  addToFavorite,
-  deleteFromFavorite,
-  DeleteFromFavorite,
-} from "../action";
+import { addToFavorite, deleteFromFavorite } from "../action";
 
 interface iAppProps {
   imagePath: string;
@@ -63,7 +59,7 @@ export function ListingCard({
           </div>
         )}
       </div>
-      <Link href={"/"} className="mt-2">
+      <Link href={`/home/${homeId}`} className="mt-2">
         <h3 className="font-medium text-base">
           {country?.flag} {country?.label} / {country?.region}
         </h3>

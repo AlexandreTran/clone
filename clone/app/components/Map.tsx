@@ -4,8 +4,6 @@ import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useCountries } from "../lib/getCountries";
 import { icon } from "leaflet";
-import prisma from "@/lib/db";
-import { redirect } from "next/navigation";
 
 const ICON = icon({
   iconUrl:
